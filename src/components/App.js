@@ -1,5 +1,8 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
+import getPokemon from "../utils/getPokemon"
+
+console.log(getPokemon())
 
 function App() {
   return (
