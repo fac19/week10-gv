@@ -1,23 +1,39 @@
-const getPokemon = () => {
+const getPokemon = (setPokemonData) => {
   return fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`)
-    .then(getJSON)
-    .then(obj => obj.results) 
-    //gives array of pokemon objects, with name and url inside.
-    //.then(arr => console.log(arr[0].name))
+    .then(getJSON)    
+    .then(obj => obj.results) //gives array of pokemon objects, with name and url inside.
+    .then(arrOfPokeObj => {
+      Promise.all(arrOfPokeObj.map(obj => getPokemonFromUrl(obj.url)))
+      .then(arrOfPokemon => {
+        setPokemonData(arrOfPokemon);
+      })
+       /* .then(getDataFromUrlArr)
+        .then(arr => {
+          pokemonArr = arr; 
+        })
+        .then(()=>console.log({ pokemonArr }))*/
+    }) //gives only array of urls for new fetch request
+  //  //fetches img, name and id of each pokemon
     .catch(console.error);
 }
+// console.log("getPokemon", getPokemon());
 
-
-// function getPokemonIdByName(name){
-//     const pokeArr = getPokemon();  //[{name: bulbasaur, url: somehtin}, ...]
-//     const singleNameUrlArray = pokeArr.map(obj => {
-//         return [obj.name, obj.url]
-//     })  //[[bulbasaur, somehtin], ...]
-//     .filter((arr) => arr[0] === name)
-//     const url = singleNameUrlArray[1]; 
-
-//     // fetch(url)
+// const getDataFromUrlArr = (urlArr) =>{ 
+//   return urlArr.map(url => getPokemonFromUrl(url))
 // }
+
+// const pickUrl = (arr) => {
+//   return arr[0]; 
+// }
+
+const getPokemonFromUrl = (url) => {
+  return fetch(url)
+    .then(getJSON)
+    .then(obj => {
+     return {img: obj.sprites.front_default, name: obj.name, id: obj.id}
+    })
+    .catch(console.err)
+}
 
 const getJSON = (response) => {
   if (!response.ok) {

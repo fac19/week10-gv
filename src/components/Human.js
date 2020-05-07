@@ -3,12 +3,12 @@ import React from "react";
 const Human = () => {
   return (
     <form>
-      <Button/>
-      <Button/>
-      <Button/>
-      <Button/>
-      <Button/>
-      <Button/>
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
     </form>
   )
 }
