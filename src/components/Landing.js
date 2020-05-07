@@ -14,14 +14,14 @@ const Landing = (props) => {
       <h1>Gotta catch'em all!</h1>
       <h3>How to play the game:</h3>
       <p>Do what Oli says, but don't listen to Gregor!</p>
-      <form>
+      <form onSubmit={startHandler}>
         <label>Your trainer name:</label>
         <input 
           id="username"
           type="text"
           value={username}
           onChange={event => setUsername(event.target.value)}/>
-        <button onClick={startHandler}>Start!</button>
+        <button type="submit">Start!</button>
         {/* should listen to submit, not click */}
       </form>
     </div>
