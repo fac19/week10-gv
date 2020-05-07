@@ -11,7 +11,6 @@ function App() {
   const [pokemonData, setPokemonData] = React.useState([]);
 
   React.useEffect(()=>{
-    console.log("useEffect");
     getPokemon(setPokemonData);
   }, [])
 
@@ -20,7 +19,7 @@ function App() {
       return (<h2>Loading...</h2>)
     }  
     if(gameOn && !gameEnd){
-      return <Game gameEnd={gameEnd} setGameEnd={setGameEnd}/>
+      return <Game pokemonData={pokemonData} gameEnd={gameEnd} setGameEnd={setGameEnd}/>
     }
     if(gameEnd){
       return <EndGame />  
