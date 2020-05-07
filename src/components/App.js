@@ -10,17 +10,14 @@ console.log(getPokemon())
 function App() {
   const [gameOn, setGameOn] = React.useState(false)
   const [gameEnd, setGameEnd] = React.useState(false)
-
-
+  
   return (
       <div>
       {gameOn && !gameEnd ? 
-        <Game /> : (gameEnd ? 
+        <Game gameEnd={gameEnd} setGameEnd={setGameEnd}/> : (gameEnd ? 
           <EndGame /> : <Landing gameOn={gameOn} setGameOn={setGameOn}/>)}
       </div>
   );
 }
-
-// gameEnd={gameEnd} setGameEnd={setGameEnd}
 
 export default App;
