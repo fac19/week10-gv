@@ -5,8 +5,8 @@ const Question = () => {
   let pokemon = "pikachu";
   return (
     <div>
-      <p>`${person}` says `${pokemon}`</p>
-      <p>find the Pikachu</p>
+      <p>{person} says..</p>
+      <p>catch the {pokemon}!</p>
     </div>
   )
 }
