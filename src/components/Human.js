@@ -1,24 +1,6 @@
 import React from "react";
 
 const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question, score, setScore}) => {
-  // const [questionArr, setQuestionArr]= React.useState([])
-  
-  React.useEffect(() => {
-    // setQuestionArr(questionArr => {
-    //   questionArr.push(question)
-    //   return questionArr
-    // });
-    if(userGuess === question) {
-      // questionArr[questionArr.length-2]
-      // setQuestionArr(questionArr => questionArr.shift());
-      console.log("user guess correct")
-      setScore(score => score+1)
-    }else{
-      console.log({userGuess, question})
-      //console.log("question is:", question)
-      console.log("user guess incorrect")
-    }
-  }, [userGuess])
  
   return (
     <section>
@@ -30,24 +12,17 @@ const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question,
   )
 }
 
-const Button = ({name, img, children, setRound, question, setScore, setUserGuess}) => {
+const Button = ({name, img, children, setRound, question, setScore, userGuess, setUserGuess}) => {
   const clickHandler = (event)=>{
-    setUserGuess(event.target.alt)
+    const newUserGuess = event.target.alt
+    setUserGuess(newUserGuess)
     setRound(round => round+1);
-   
-    //   if(userGuess === question) {
-    //     // questionArr[questionArr.length-2]
-    //     // setQuestionArr(questionArr => questionArr.shift());
-    //     console.log("user guess correct")
-    //     setScore(score => score+1)
-    //   }else{
-    //     console.log({userGuess, question})
-    //     //console.log("question is:", question)
-    //     console.log("user guess incorrect")
-    //   }
-    // }
-  }
-
+      if(newUserGuess === question) {
+        console.log("newUserGuess", newUserGuess)
+        setScore(score => score+1)
+      }
+    }
+  
   return (
      <div> 
        <p>{name}</p>

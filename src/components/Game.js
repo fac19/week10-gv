@@ -6,12 +6,9 @@ const Game = ({gameEnd, setGameEnd, pokemonData, score, setScore}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
   const [round, setRound] = React.useState(0);
  
-
   setTimeout(()=>{
     setGameEnd(true);
   }, 24000)
-
-
 
  function randomNumbers(length) {
   return Array.from({ length }, () => {
