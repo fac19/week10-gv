@@ -1,5 +1,5 @@
 const getPokemon = (setPokemonData) => {
-  return fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`)
+  return fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     .then(getJSON)    
     .then(obj => obj.results) //gives array of pokemon objects, with name and url inside.
     .then(arrOfPokeObj => {
