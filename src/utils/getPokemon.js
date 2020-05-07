@@ -1,14 +1,10 @@
-let pokemonArr = [];
-
 const getPokemon = (setPokemonData) => {
-  // getPokemon could take a setstate as an argument, and then call it in the  .then at the end
   return fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`)
     .then(getJSON)    
     .then(obj => obj.results) //gives array of pokemon objects, with name and url inside.
-    .then(arr => {
-      Promise.all(arr.map(obj => getPokemonFromUrl(obj.url)))
+    .then(arrOfPokeObj => {
+      Promise.all(arrOfPokeObj.map(obj => getPokemonFromUrl(obj.url)))
       .then(arrOfPokemon => {
-        // set state in here!
         setPokemonData(arrOfPokemon);
       })
        /* .then(getDataFromUrlArr)
@@ -22,10 +18,9 @@ const getPokemon = (setPokemonData) => {
 }
 // console.log("getPokemon", getPokemon());
 
-const getDataFromUrlArr = (urlArr) =>{ 
-
-  return urlArr.map(url => getPokemonFromUrl(url))
-}
+// const getDataFromUrlArr = (urlArr) =>{ 
+//   return urlArr.map(url => getPokemonFromUrl(url))
+// }
 
 // const pickUrl = (arr) => {
 //   return arr[0]; 

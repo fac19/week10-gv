@@ -16,7 +16,9 @@ function App() {
   }, [])
 
   const AppContent = React.useMemo(()=>{
-    // Logic: if pokemon data array length is 0, return a "loading" screen so people can't press "start game" too early
+    if(pokemonData.length === 0){// So people can't press "start game" too early
+      return (<h2>Loading...</h2>)
+    }  
     if(gameOn && !gameEnd){
       return <Game gameEnd={gameEnd} setGameEnd={setGameEnd}/>
     }
@@ -24,7 +26,7 @@ function App() {
       return <EndGame />  
     }
     return <Landing gameOn={gameOn} setGameOn={setGameOn}/>
-  }, [gameOn, gameEnd])
+  }, [gameOn, gameEnd, pokemonData])
 
     return(<div>{AppContent}</div>)
 }
