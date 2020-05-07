@@ -1,7 +1,7 @@
 import React from "react";
 
 const Question = ({userGuess, setUserGuess, question, round, setRound}) => {
-/* A
+  /* A
   1. put round state in game.js
   2. put round state into question props
   3. enter result of random number generator into below.

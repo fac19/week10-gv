@@ -2,17 +2,16 @@ import React from "react";
 import Question from "./Question";
 import Human from "./Human";
 
-const Game = ({gameEnd, setGameEnd, pokemonData}) => {
+const Game = ({gameEnd, setGameEnd, pokemonData, score, setScore}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
   const [round, setRound] = React.useState(0);
+ 
 
   setTimeout(()=>{
     setGameEnd(true);
   }, 24000)
 
-  /*
-    useEffect which listens to userGuess change (and renders whole game again).
-  */
+
 
  function randomNumbers(length) {
   return Array.from({ length }, () => {
@@ -41,8 +40,8 @@ if(!pokemonData){
 
   return (
     <div>
-      <Question question={question} userGuess={userGuess} setUserGuess={setUserGuess} round={round} setRound={setRound}/>
-      <Human pokeDataArr={pokeDataArr} round={round} setRound={setRound}/>
+      <Question question={question} userGuess={userGuess} setUserGuess={setUserGuess}/>
+      <Human score={score} setScore={setScore} question={question} userGuess={userGuess} setUserGuess={setUserGuess} round={round} setRound={setRound} pokeDataArr={pokeDataArr}/>
     </div>
   )
 }

@@ -13,7 +13,7 @@ const Landing = (props) => {
     <div>
       <h1>Gotta catch'em all!</h1>
       <h3>How to play the game:</h3>
-      <p>Do what Oli says, but don't listen to Gregor!</p>
+      <p>Do what Oli says as fast as you can! You have 24s starting...</p>
       <form onSubmit={startHandler}>
         <label>Your trainer name:</label>
         <input 
@@ -21,8 +21,7 @@ const Landing = (props) => {
           type="text"
           value={username}
           onChange={event => setUsername(event.target.value)}/>
-        <button type="submit">Start!</button>
-        {/* should listen to submit, not click */}
+        <button type="submit">Now!</button>
       </form>
     </div>
   )
