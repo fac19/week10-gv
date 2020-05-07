@@ -1,20 +1,29 @@
 let pokemonArr = [];
 
-const getPokemon = () => {
+const getPokemon = (setPokemonData) => {
+  // getPokemon could take a setstate as an argument, and then call it in the  .then at the end
   return fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`)
-    .then(getJSON)
+    .then(getJSON)    
     .then(obj => obj.results) //gives array of pokemon objects, with name and url inside.
-    .then(arr => arr.map(obj => obj.url)) //gives only array of urls for new fetch request
-    .then(getDataFromUrlArr)
     .then(arr => {
-      pokemonArr=arr; 
-    })
-    .then(()=>console.log(pokemonArr))
-   //fetches img, name and id of each pokemon
+      Promise.all(arr.map(obj => getPokemonFromUrl(obj.url)))
+      .then(arrOfPokemon => {
+        // set state in here!
+        setPokemonData(arrOfPokemon);
+      })
+       /* .then(getDataFromUrlArr)
+        .then(arr => {
+          pokemonArr = arr; 
+        })
+        .then(()=>console.log({ pokemonArr }))*/
+    }) //gives only array of urls for new fetch request
+  //  //fetches img, name and id of each pokemon
     .catch(console.error);
 }
+// console.log("getPokemon", getPokemon());
 
 const getDataFromUrlArr = (urlArr) =>{ 
+
   return urlArr.map(url => getPokemonFromUrl(url))
 }
 
@@ -26,7 +35,7 @@ const getPokemonFromUrl = (url) => {
   return fetch(url)
     .then(getJSON)
     .then(obj => {
-      return {img: obj.sprites.front_default, name: obj.name, id: obj.id}
+     return {img: obj.sprites.front_default, name: obj.name, id: obj.id}
     })
     .catch(console.err)
 }
