@@ -1,23 +1,35 @@
+let pokemonArr = [];
+
 const getPokemon = () => {
   return fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`)
     .then(getJSON)
-    .then(obj => obj.results) 
-    //gives array of pokemon objects, with name and url inside.
-    //.then(arr => console.log(arr[0].name))
+    .then(obj => obj.results) //gives array of pokemon objects, with name and url inside.
+    .then(arr => arr.map(obj => obj.url)) //gives only array of urls for new fetch request
+    .then(getDataFromUrlArr)
+    .then(arr => {
+      pokemonArr=arr; 
+    })
+    .then(()=>console.log(pokemonArr))
+   //fetches img, name and id of each pokemon
     .catch(console.error);
 }
 
+const getDataFromUrlArr = (urlArr) =>{ 
+  return urlArr.map(url => getPokemonFromUrl(url))
+}
 
-// function getPokemonIdByName(name){
-//     const pokeArr = getPokemon();  //[{name: bulbasaur, url: somehtin}, ...]
-//     const singleNameUrlArray = pokeArr.map(obj => {
-//         return [obj.name, obj.url]
-//     })  //[[bulbasaur, somehtin], ...]
-//     .filter((arr) => arr[0] === name)
-//     const url = singleNameUrlArray[1]; 
-
-//     // fetch(url)
+// const pickUrl = (arr) => {
+//   return arr[0]; 
 // }
+
+const getPokemonFromUrl = (url) => {
+  return fetch(url)
+    .then(getJSON)
+    .then(obj => {
+      return {img: obj.sprites.front_default, name: obj.name, id: obj.id}
+    })
+    .catch(console.err)
+}
 
 const getJSON = (response) => {
   if (!response.ok) {
