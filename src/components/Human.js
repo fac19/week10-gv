@@ -21,7 +21,7 @@ const Button = ({name, img, children, setRound, question, setScore, userGuess, s
       if(newUserGuess === question) {
         setScore(score => score+1)
       }
-    }
+  }
   
   return (
      <div> 
