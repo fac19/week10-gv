@@ -6,10 +6,13 @@ import arrOfRandomNum from "../utils/randomNum"
 const Game = ({gameEnd, setGameEnd, pokemonData, score, setScore}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
   const [round, setRound] = React.useState(0);
- 
-  setTimeout(()=>{
-    setGameEnd(true);
-  }, 24000)
+  
+  React.useEffect(()=>{
+    const duration = setTimeout(()=>{
+      setGameEnd(true);
+    }, 24000);
+    return () => clearTimeout(duration);
+  }, [])
 
 let arrOfRandomNumbers = arrOfRandomNum(5, pokemonData.length);
 let pokeDataArr = arrOfRandomNumbers.map(randNum => pokemonData[randNum])
