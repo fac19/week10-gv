@@ -8,9 +8,8 @@ function arrOfRandomNum(num, length) {
     rangeArr.push(i);
   }
 
-  for (let i = 0; i < (length - num); i++) {
-    console.log("i", i);
-    let randomNum = Math.floor(Math.random() * length);
+  for (let i = 0; i < (length - num); i++) { //NOT best method, as doing a lot of iterations....need to improve.
+    let randomNum = Math.floor(Math.random() * rangeArr.length);
     rangeArr.splice(randomNum - 1, 1);
   }
 
@@ -20,17 +19,9 @@ function arrOfRandomNum(num, length) {
 export default arrOfRandomNum;
 
 
-
-
 // function randomNumbers(length) {
 //   return Array.from({ length }, () => {
 //     const randomNum = Math.floor(Math.random() * pokemonData.length)
 //     return randomNum;
 //   })
 // } 
-//NEED TO IMPROVE GENERATOR TO MAKE RANDOM NUMBERS UNIQUE
-// 1) Generate array of posible numbers, e.g. 1 -> 20
-// E.g. const arrOfNumbers = Array.from... -> generate
-// 2) generate random number between 0-19, pop that out of the array and save it in new array
-// 3) generate the next random number between 0-18, pop that out...
-// 4) repeat in a loop 
