@@ -1,5 +1,5 @@
 import React from 'react';
-// import './App.css';
+import './App.css';
 import getPokemon from "../utils/getPokemon";
 import Landing from "./Landing";
 import Game from "./Game"
@@ -17,7 +17,10 @@ function App() {
   
     if(pokemonData.length === 0){// So people can't press "start game" too early
       // if (gameState === "loading") return <h2>Loading...</h2>  
-      return (<h2>Loading...</h2>)
+      return (<img className="loading" src="https://media.giphy.com/media/j2xgBIuAgmrpS/giphy.gif" alt="Loading..." />)
+      /* other possible loading gifs:
+        https://pokeres.bastionbot.org/pokeball.gif
+      */
     }  
     if(gameState === "initial"){
       return <Landing setGameState={setGameState}/>
