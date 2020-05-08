@@ -1,13 +1,11 @@
 import React from "react";
 
-const EndGame = ({score, setGameOn, setGameEnd}) => {
+const EndGame = ({score, setGameState}) => {
   const startGameHandler = ()=>{
-    setGameEnd(false)
-    setGameOn(true)
+    setGameState("running")
   }
   const homeHandler = () => {
-    setGameOn(false)
-    setGameEnd(false)
+    setGameState("initial")    
   }
   return (
     <div>
@@ -16,7 +14,6 @@ const EndGame = ({score, setGameOn, setGameEnd}) => {
       <button onClick={startGameHandler}>Start Game again!</button>
       <button onClick={homeHandler}>Go Home!</button>
     </div>
-
   )
 }
 

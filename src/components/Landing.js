@@ -1,12 +1,10 @@
 import React from "react"
 
-const Landing = (props) => {
+const Landing = ({setGameState}) => {
   const [username, setUsername] = React.useState("Ash")
 
   const startHandler = () => {
-    props.setGameOn(true);
-    localStorage.setItem("user", username) //for testing only?
-    localStorage.setItem("gameOn", true) // for testing only.
+    setGameState("running");
   }
 
   return (
