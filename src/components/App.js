@@ -6,11 +6,10 @@ import Game from "./Game"
 import EndGame from "./EndGame"
 
 function App() {
-  // const [gameOn, setGameOn] = React.useState(false);
-  // const [gameEnd, setGameEnd] = React.useState(false);
   const [gameState, setGameState] = React.useState("initial");
   const [pokemonData, setPokemonData] = React.useState([]);
   const [score, setScore]=React.useState(0);
+  const [round, setRound] = React.useState(0);
 
   React.useEffect(()=>{
     getPokemon(setPokemonData);
@@ -24,10 +23,10 @@ function App() {
       return <Landing setGameState={setGameState}/>
     }
     if(gameState === "running"){
-      return <Game score={score} setScore={setScore} pokemonData={pokemonData} gameState={gameState} setGameState={setGameState}/>
+      return <Game score={score} setScore={setScore} pokemonData={pokemonData} setGameState={setGameState} round={round} setRound={setRound}/>
     }
     if(gameState === "end"){
-      return <EndGame setGameState={setGameState} score={score} setScore={setScore}/>  
+      return <EndGame setGameState={setGameState} score={score} setScore={setScore} round={round} setRound={setRound}/>  
     }
 }
 
