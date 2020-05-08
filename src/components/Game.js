@@ -3,9 +3,8 @@ import Question from "./Question";
 import Human from "./Human";
 import arrOfRandomNum from "../utils/randomNum"
 
-const Game = ({gameState, setGameState, pokemonData, score, setScore}) => {
+const Game = ({setGameState, pokemonData, score, setScore, round, setRound}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
-  const [round, setRound] = React.useState(0);
   
   React.useEffect(()=>{
     const duration = setTimeout(()=>{

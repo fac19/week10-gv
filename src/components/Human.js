@@ -12,7 +12,7 @@ const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question,
   )
 }
 
-const Button = ({name, img, children, setRound, question, setScore, userGuess, setUserGuess}) => {
+const Button = ({name, img, children, setRound, question, setScore, setUserGuess}) => {
   const clickHandler = (event)=>{
     const newUserGuess = name
     setUserGuess(newUserGuess)
