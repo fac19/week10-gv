@@ -24,7 +24,6 @@ const Button = ({name, img, children, setRound, question, setScore, setUserGuess
   
   return (
       <button onClick={clickHandler}>
-        <p>{name}</p>
         {children || <img src={img} alt={name}/>}
       </button>
   )
