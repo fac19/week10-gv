@@ -14,18 +14,17 @@ const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question,
 
 const Button = ({name, img, children, setRound, question, setScore, userGuess, setUserGuess}) => {
   const clickHandler = (event)=>{
-    const newUserGuess = event.target.alt
+    console.log(name)
+    const newUserGuess = name
     setUserGuess(newUserGuess)
     setRound(round => round+1);
       if(newUserGuess === question) {
-        console.log("newUserGuess", newUserGuess)
         setScore(score => score+1)
       }
     }
   
   return (
      <div> 
-       <p>{name}</p>
       <button onClick={clickHandler}>
         {children || <img src={img} alt={name}/>}
       </button>
