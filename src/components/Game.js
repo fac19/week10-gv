@@ -3,13 +3,13 @@ import Question from "./Question";
 import Human from "./Human";
 import arrOfRandomNum from "../utils/randomNum"
 
-const Game = ({gameEnd, setGameEnd, pokemonData, score, setScore}) => {
+const Game = ({gameState, setGameState, pokemonData, score, setScore}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
   const [round, setRound] = React.useState(0);
   
   React.useEffect(()=>{
     const duration = setTimeout(()=>{
-      setGameEnd(true);
+      setGameState("end");
     }, 24000);
     return () => clearTimeout(duration);
   }, [])
@@ -29,7 +29,7 @@ if(!pokemonData){
 
   return (
     <div>
-      <Question question={question} userGuess={userGuess} setUserGuess={setUserGuess}/>
+      <Question question={question}/>
       <Human score={score} setScore={setScore} question={question} userGuess={userGuess} setUserGuess={setUserGuess} round={round} setRound={setRound} pokeDataArr={pokeDataArr}/>
     </div>
   )

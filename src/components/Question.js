@@ -1,6 +1,6 @@
 import React from "react";
 
-const Question = ({userGuess, setUserGuess, question, round, setRound}) => {
+const Question = ({ question }) => {
   /* A
   1. put round state in game.js
   2. put round state into question props

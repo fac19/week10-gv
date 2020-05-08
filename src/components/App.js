@@ -6,29 +6,29 @@ import Game from "./Game"
 import EndGame from "./EndGame"
 
 function App() {
-  const [gameOn, setGameOn] = React.useState(false);
-  const [gameEnd, setGameEnd] = React.useState(false);
+  // const [gameOn, setGameOn] = React.useState(false);
+  // const [gameEnd, setGameEnd] = React.useState(false);
+  const [gameState, setGameState] = React.useState("initial");
   const [pokemonData, setPokemonData] = React.useState([]);
   const [score, setScore]=React.useState(0);
 
   React.useEffect(()=>{
     getPokemon(setPokemonData);
   }, [])
-
-  const AppContent = React.useMemo(()=>{
+  
     if(pokemonData.length === 0){// So people can't press "start game" too early
+      // if (gameState === "loading") return <h2>Loading...</h2>  
       return (<h2>Loading...</h2>)
     }  
-    if(gameOn && !gameEnd){
-      return <Game score={score} setScore={setScore} pokemonData={pokemonData} gameEnd={gameEnd} setGameEnd={setGameEnd}/>
+    if(gameState === "initial"){
+      return <Landing setGameState={setGameState}/>
     }
-    if(gameEnd){
-      return <EndGame setGameOn={setGameOn} setGameEnd={setGameEnd} score={score} setScore={setScore}/>  
+    if(gameState === "running"){
+      return <Game score={score} setScore={setScore} pokemonData={pokemonData} gameState={gameState} setGameState={setGameState}/>
     }
-    return <Landing gameOn={gameOn} setGameOn={setGameOn}/>
-  }, [gameOn, gameEnd, pokemonData, score])
-
-    return(<div>{AppContent}</div>)
+    if(gameState === "end"){
+      return <EndGame setGameState={setGameState} score={score} setScore={setScore}/>  
+    }
 }
 
 export default App;
