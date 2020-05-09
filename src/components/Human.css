@@ -4,7 +4,7 @@
   --buttonSize: 5rem;
 
   /*below variables are helpers to place 6 buttons spaced exactly around a circle of radius (below), where sqrt3=1.7*/
-  --radius: 10rem;
+  --radius: 12rem;
   /* --sqrt3: 1.7; */
   --radx0: 0; 
   --radx1: calc(var(--radius)/2);
