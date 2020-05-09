@@ -1,9 +1,9 @@
 .pokeButtonContainer{
   position: relative;
-  left: 5%; /*make a proper grid for whole page rather than this left: 5%*/
+  left: 5%; /* make a proper grid for whole page rather than this left: 5% */
   --buttonSize: 5rem;
 
-  /*below variables are helpers to place 6 buttons spaced exactly around a circle of radius (below), where sqrt3=1.7*/
+  /*below variables are helpers to place 6 buttons spaced exactly around a circle of radius (below), where sqrt(3)=1.7*/
   --radius: 17rem;
   /* --sqrt3: 1.7; */
   --radx0: 0; 
@@ -48,6 +48,7 @@
   border-radius: 50%;
   width: var(--buttonSize);
   height: var(--buttonSize);
+  cursor: url(./pokeball-cursor.png), pointer;
 }
 
 .pokeImg{
