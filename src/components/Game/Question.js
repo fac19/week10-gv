@@ -18,7 +18,10 @@ const Question = ({ question }) => {
 */
 
   return (
-      <h2 className="dictator">Oli says <span className="question">catch the {question}!</span></h2>
+    <div className="questionContainer">
+      <h2 className="dictator">Oli says</h2>
+      <h2 className="question">Catch {question}!</h2>
+    </div>
   )
 }
 

@@ -17,8 +17,8 @@ const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question,
   return (
     <section className="pokeButtonContainer">
         {buttonArr}
-        <Button CSSclass="button skip" score={score} setScore={setScore} question={question} userGuess={userGuess} setRound={setRound} round={round} setUserGuess={setUserGuess}>
-          SKIP
+        <Button CSSclass="button next" score={score} setScore={setScore} question={question} userGuess={userGuess} setRound={setRound} round={round} setUserGuess={setUserGuess}>
+          NEXT
         </Button>
         {children} {/* Note that the children here renders <Question/> */}
     </section>

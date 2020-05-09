@@ -4,7 +4,7 @@
   --buttonSize: 5rem;
 
   /*below variables are helpers to place 6 buttons spaced exactly around a circle of radius (below), where sqrt3=1.7*/
-  --radius: 12rem;
+  --radius: 17rem;
   /* --sqrt3: 1.7; */
   --radx0: 0; 
   --radx1: calc(var(--radius)/2);
@@ -18,12 +18,27 @@
 }
 
 .dictator{
-  position: absolute;
-  color: red;
+  position: relative;
+  top: calc(var(--radius)*0.25);
+  left: calc(var(--radius)*0.45); 
+  color: green;
 }
 
 .question{
-  color: green;
+  position: relative;
+  top: calc(var(--radius)*0.49);
+  left: calc(var(--radius)*0.35); 
+  color: red;
+}
+
+.questionContainer{
+  position: absolute;
+  top: calc(var(--radius)*0.55);
+  left: calc(var(--radius)*0.55);
+  width: calc(var(--radius)*1.21);
+  height: calc(var(--radius)*1.21);
+  background-color: pink;
+  border-radius: 50%;
 }
 
 .button{
@@ -174,7 +189,7 @@
     left: var(--radx1);}
 }
 
-.skip{
+.next{
   top: var(--rady2);
   left: var(--radx2);
   animation-name: button5;
