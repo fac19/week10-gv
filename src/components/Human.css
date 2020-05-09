@@ -1,0 +1,81 @@
+.pokeButtonContainer{
+  position: relative;
+  left: 5%; /*make a proper grid for whole page rather than this left: 5%*/
+  --buttonSize: 5rem;
+
+  /*below variables are helpers to place 6 buttons spaced exactly around a circle of radius (below), where sqrt3=1.7*/
+  --radius: 10rem;
+  /* --sqrt3: 1.7; */
+  --radx0: 0; 
+  --radx1: calc(var(--radius)/2);
+  --radx2: calc((var(--radius)*3)/2);
+  --radx3: calc(2*var(--radius));
+  /* --rady0: calc((var(--radius))*(1-(var(--sqrt3)/2))); */
+  --rady0: calc(var(--radius)*0.15);
+  --rady1: calc(var(--radius));
+  /* --rady2: calc((var(--radius))*(1+(var(--sqrt3)/2)));   */
+  --rady2: calc(var(--radius)*1.85);
+}
+
+.button{
+  display: block; 
+  position: absolute;
+  background-color: none;
+  border-radius: 50%;
+  width: var(--buttonSize);
+  height: var(--buttonSize);
+}
+
+.pokeImg{
+  text-align: center; /* why is image not centered? */
+}
+
+/* @keyframes button0 {
+  0% {}
+  17% {}
+  33% {}
+  50% {}
+  67% {}
+  83% {}
+  100% {}
+} */
+
+.pokeButton0{
+  top: var(--rady1);
+  left: var(--radx3);
+  /* animation-name: button0;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite; */
+}
+
+.pokeButton1{
+  top: var(--rady0);
+  left: var(--radx2);
+}
+
+.pokeButton2{
+  top: var(--rady0);
+  left: var(--radx1);
+}
+
+.pokeButton3{
+  top: var(--rady1);
+  left: var(--radx0);
+}
+
+.pokeButton4{
+  top: var(--rady2);
+  left: var(--radx1);
+}
+
+.skip{
+  top: var(--rady2);
+  left: var(--radx2);
+}
+ 
+ 
+
+
+
