@@ -1,4 +1,6 @@
 import React from "react";
+import './Game.css';
+
 
 const Question = ({ question }) => {
   /* A
@@ -16,7 +18,7 @@ const Question = ({ question }) => {
 */
 
   return (
-      <h2>Oli says <span>catch the {question}!</span></h2>
+      <h2 className="dictator">Oli says <span className="question">catch the {question}!</span></h2>
   )
 }
 

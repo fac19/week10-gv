@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import getPokemon from "../utils/getPokemon";
 import Landing from "./Landing";
-import Game from "./Game"
+import Game from "./Game/Game.js"
 import EndGame from "./EndGame"
 
 function App() {

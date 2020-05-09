@@ -1,7 +1,8 @@
 import React from "react";
-import './Human.css';
+import './Game.css';
 
-const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question, score, setScore}) => {
+const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question, score, setScore, children}) => {
+
 
   let buttonArr = []
   for(let i=0; i<5; i++){
@@ -19,6 +20,7 @@ const Human = ({pokeDataArr, setUserGuess, userGuess, setRound, round, question,
         <Button CSSclass="button skip" score={score} setScore={setScore} question={question} userGuess={userGuess} setRound={setRound} round={round} setUserGuess={setUserGuess}>
           SKIP
         </Button>
+        {children} {/* Note that the children here renders <Question/> */}
     </section>
   )
 }

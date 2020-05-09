@@ -17,6 +17,15 @@
   --rady2: calc(var(--radius)*1.85);
 }
 
+.dictator{
+  position: absolute;
+  color: red;
+}
+
+.question{
+  color: green;
+}
+
 .button{
   display: block; 
   position: absolute;

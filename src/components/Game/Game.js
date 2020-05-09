@@ -1,7 +1,7 @@
 import React from "react";
 import Question from "./Question";
 import Human from "./Human";
-import arrOfRandomNum from "../utils/randomNum"
+import arrOfRandomNum from "../../utils/randomNum";
 
 const Game = ({setGameState, pokemonData, score, setScore, round, setRound}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
@@ -28,8 +28,9 @@ if(!pokemonData){
 
   return (
     <div>
-      <Question question={question}/>
-      <Human score={score} setScore={setScore} question={question} userGuess={userGuess} setUserGuess={setUserGuess} round={round} setRound={setRound} pokeDataArr={pokeDataArr}/>
+      <Human score={score} setScore={setScore} question={question} userGuess={userGuess} setUserGuess={setUserGuess} round={round} setRound={setRound} pokeDataArr={pokeDataArr}>
+        <Question question={question}/>
+      </Human>
     </div>
   )
 }
