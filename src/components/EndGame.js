@@ -12,13 +12,13 @@ const EndGame = ({score, setScore, round, setRound, setGameState}) => {
     setRound(0);    
   }
   return (
-    <div>
+    <section>
       <h2>Time is up!</h2>
       <p>Scores: {score}</p>
       <p>Number of Rounds played: {round}</p>
       <button onClick={startGameHandler}>Start Game again!</button>
       <button onClick={homeHandler}>Go Home!</button>
-    </div>
+    </section>
   )
 }
 

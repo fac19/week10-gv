@@ -1,0 +1,228 @@
+html {
+  cursor: url(./pokeball-cursor.png), auto;
+}
+.pokeButtonContainer{
+  position: relative;
+  left: 5%; /* make a proper grid for whole page rather than this left: 5% */
+  --buttonSize: 5rem;
+
+  /*below variables are helpers to place 6 buttons spaced exactly around a circle of radius (below), where sqrt(3)=1.7*/
+  --radius: 17rem;
+  /* --sqrt3: 1.7; */
+  --radx0: 0; 
+  --radx1: calc(var(--radius)/2);
+  --radx2: calc((var(--radius)*3)/2);
+  --radx3: calc(2*var(--radius));
+  /* --rady0: calc((var(--radius))*(1-(var(--sqrt3)/2))); */
+  --rady0: calc(var(--radius)*0.15);
+  --rady1: calc(var(--radius));
+  /* --rady2: calc((var(--radius))*(1+(var(--sqrt3)/2)));   */
+  --rady2: calc(var(--radius)*1.85);
+}
+
+.dictator{
+  position: relative;
+  top: calc(var(--radius)*0.25);
+  left: calc(var(--radius)*0.45); 
+  color: green;
+}
+
+.question{
+  position: relative;
+  top: calc(var(--radius)*0.49);
+  left: calc(var(--radius)*0.35); 
+  color: red;
+}
+
+.questionContainer{
+  position: absolute;
+  top: calc(var(--radius)*0.55);
+  left: calc(var(--radius)*0.55);
+  width: calc(var(--radius)*1.21);
+  height: calc(var(--radius)*1.21);
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.button{
+  display: block; 
+  position: absolute;
+  background-color: none;
+  border-radius: 50%;
+  width: var(--buttonSize);
+  height: var(--buttonSize);
+  cursor: url(./pokeball-cursor-green.png), pointer;
+  padding: .2rem;
+}
+
+.pokeImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pokeButton0{
+  top: var(--rady1);
+  left: var(--radx3);
+  animation-name: button0;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes button0 {
+  0% {top: var(--rady1);
+    left: var(--radx3);}
+  17% {top: var(--rady0);
+    left: var(--radx2);}
+  33% {top: var(--rady0);
+    left: var(--radx1);}
+  50% {top: var(--rady1);
+    left: var(--radx0);}
+  67% {top: var(--rady2);
+    left: var(--radx1);}
+  83% {top: var(--rady2);
+    left: var(--radx2);}
+  100% {top: var(--rady1);
+    left: var(--radx3);}
+}
+
+.pokeButton1{
+  top: var(--rady0);
+  left: var(--radx2);
+  animation-name: button1;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes button1 {
+  0% {top: var(--rady0);
+    left: var(--radx2);}
+  17% {top: var(--rady0);
+    left: var(--radx1);}
+  33% {top: var(--rady1);
+    left: var(--radx0);}
+  50% {top: var(--rady2);
+    left: var(--radx1);}
+  67% {top: var(--rady2);
+    left: var(--radx2);}
+  83% {top: var(--rady1);
+    left: var(--radx3);}
+  100% {top: var(--rady0);
+    left: var(--radx2);}
+}
+
+.pokeButton2{
+  top: var(--rady0);
+  left: var(--radx1);
+  animation-name: button2;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes button2 {
+  0% {top: var(--rady0);
+    left: var(--radx1);}
+  17% {top: var(--rady1);
+    left: var(--radx0);}
+  33% {top: var(--rady2);
+    left: var(--radx1);}
+  50% {top: var(--rady2);
+    left: var(--radx2);}
+  67% {top: var(--rady1);
+    left: var(--radx3);}
+  83% {top: var(--rady0);
+    left: var(--radx2);}
+  100% {top: var(--rady0);
+    left: var(--radx1);}
+}
+
+.pokeButton3{
+  top: var(--rady1);
+  left: var(--radx0);
+  animation-name: button3;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes button3 {
+  0% {top: var(--rady1);
+    left: var(--radx0);}
+  17% {top: var(--rady2);
+    left: var(--radx1);}
+  33% {top: var(--rady2);
+    left: var(--radx2);}
+  50% {top: var(--rady1);
+    left: var(--radx3);}
+  67% {top: var(--rady0);
+    left: var(--radx2);}
+  83% {top: var(--rady0);
+    left: var(--radx1);}
+  100% {top: var(--rady1);
+    left: var(--radx0);}
+}
+
+.pokeButton4{
+  top: var(--rady2);
+  left: var(--radx1);
+  animation-name: button4;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes button4 {
+  0% {top: var(--rady2);
+    left: var(--radx1);}
+  17% {top: var(--rady2);
+    left: var(--radx2);}
+  33% {top: var(--rady1);
+    left: var(--radx3);}
+  50% {top: var(--rady0);
+    left: var(--radx2);}
+  67% {top: var(--rady0);
+    left: var(--radx1);}
+  83% {top: var(--rady1);
+    left: var(--radx0);}
+  100% {top: var(--rady2);
+    left: var(--radx1);}
+}
+
+.next{
+  top: var(--rady2);
+  left: var(--radx2);
+  animation-name: button5;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes button5 {
+  0% {top: var(--rady2);
+    left: var(--radx2);}
+  17% {top: var(--rady1);
+    left: var(--radx3);}
+  33% {top: var(--rady0);
+    left: var(--radx2);}
+  50% {top: var(--rady0);
+    left: var(--radx1);}
+  67% {top: var(--rady1);
+    left: var(--radx0);}
+  83% {top: var(--rady2);
+    left: var(--radx1);}
+  100% {top: var(--rady2);
+    left: var(--radx2);}
+}
+ 
+
+
+

@@ -8,7 +8,7 @@ const Landing = ({setGameState}) => {
   }
 
   return (
-    <div>
+    <main>
       <h1>Gotta catch'em all!</h1>
       <h3>How to play the game:</h3>
       <p>Do what Oli says as fast as you can! You have 24s starting...</p>
@@ -21,7 +21,7 @@ const Landing = ({setGameState}) => {
           onChange={event => setUsername(event.target.value)}/>
         <button type="submit">Now!</button>
       </form>
-    </div>
+    </main>
   )
 }
 
