@@ -6,7 +6,7 @@ import Countdown from "./Countdown";
 import sound from "./pokemon-theme-song.mp3";
 
 
-const Game = ({setGameState, pokemonData, score, setScore, round, setRound}) => {
+const Game = ({username, setGameState, pokemonData, score, setScore, round, setRound}) => {
   const [userGuess, setUserGuess] = React.useState(null); //for use by Human and Body
   
   React.useEffect(()=>{
@@ -41,6 +41,8 @@ if(!pokemonData){
       <audio controls src={sound}>
         Your browser does not support the audio element.
       </audio>
+      <p>Score: {score}</p>
+      <p>User: {username}</p>
     </main>
   )
 }
