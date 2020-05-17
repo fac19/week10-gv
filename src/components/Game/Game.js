@@ -27,11 +27,11 @@ if(!pokemonData){
 }
 
   return (
-    <div>
+    <main>
       <Human score={score} setScore={setScore} question={question} userGuess={userGuess} setUserGuess={setUserGuess} round={round} setRound={setRound} pokeDataArr={pokeDataArr}>
         <Question question={question}/>
       </Human>
-    </div>
+    </main>
   )
 }
 

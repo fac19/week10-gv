@@ -1,7 +1,6 @@
 html {
   cursor: url(./pokeball-cursor.png), auto;
 }
-
 .pokeButtonContainer{
   position: relative;
   left: 5%; /* make a proper grid for whole page rather than this left: 5% */
@@ -53,10 +52,13 @@ html {
   width: var(--buttonSize);
   height: var(--buttonSize);
   cursor: url(./pokeball-cursor-green.png), pointer;
+  padding: .2rem;
 }
 
 .pokeImg{
-  text-align: center; /* why is image not centered? */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pokeButton0{
