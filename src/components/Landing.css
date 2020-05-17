@@ -1,0 +1,27 @@
+body {
+  background-image: url(./grass-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+}
+.landing,
+.landing__form {
+  display: flex;
+  flex-direction: column;
+}
+.landing {
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  padding: 1rem;
+}
+.landing__header {
+  font-family: 'Bangers', cursive;
+  text-align: center;
+  margin: 0;
+  font-size: 5rem;
+  color: yellow;
+  text-shadow: 5px 5px hsla(201, 100%, 50%, 1);
+}
+
