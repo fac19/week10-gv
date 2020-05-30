@@ -1,9 +1,7 @@
 import React from "react";
 import "./Landing.css";
 
-const Landing = ({setGameState}) => {
-  const [username, setUsername] = React.useState("Ash")
-
+const Landing = ({setGameState, username, setUsername}) => {
   const startHandler = () => {
     setGameState("running");
   }

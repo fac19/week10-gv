@@ -33,6 +33,9 @@ const Button = ({CSSclass, name, img, children, setRound, question, setScore, se
       if(newUserGuess === question) {
         setScore(score => score+1)
       }
+      if(newUserGuess !== question) {
+        setScore(score => score-1)
+      }
   }
   
   return (
