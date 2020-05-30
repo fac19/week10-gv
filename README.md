@@ -1,6 +1,6 @@
 # Oli Says...
 
-This is a pokemon game built in REACT (hosted at https://oli-says.netlify.app), using the [https://pokeapi.co/](pokeAPI). The game is a test of your pokemon knowledge and ability to obediently follow Oli's wise instructions as quickly as you can, enabling you to catch the correct pokemon.
+This is a pokemon game built in REACT (hosted at https://oli-says.netlify.app), using the pokemon API [https://pokeapi.co/](pokeAPI). The game is a test of your pokemon knowledge and ability to obediently follow Oli's wise instructions as quickly as you can, enabling you to catch the correct pokemon.
 
 Contributors: Giovanna, Vatsal
 
